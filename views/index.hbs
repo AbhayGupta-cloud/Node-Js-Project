@@ -7,6 +7,9 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <link rel="stylesheet" href="/static/css/style.css">
     <title>Hello, world!</title>
   </head>
@@ -15,6 +18,168 @@
 {{>navbar data=details}}
     <!-- Optional JavaScript; choose one of the two! -->
 {{> slider slides=slides}}
+
+{{!-- banner1 section --}}
+
+<section class="banner1_section background1 py-5">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Start Learning New Technologies!!</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam tempora accusantium deleniti nihil vero. Minus, ratione ipsum? Iste, maiores iure. Ab laboriosam, modi tempora quasi voluptas itaque quibusdam velit error!</p>
+        <button class="btn btn-outline-primary">
+          Start Learning
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{!-- banner 2 section --}}
+<section class="banner2_section py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-center">
+        {{!--left side --}}
+        <h3>Hello world!Welcome to Spring Boot.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio natus inventore non labore in aut explicabo, fugiat esse vel voluptatem officiis aliquam similique dolorem accusantium exercitationem dolorum iure modi dolore.</p>
+        <button class="btn btn-primary">
+          Click Here
+        </button>
+      </div>
+      <div class="col-md-6 text-center py-2">
+        {{!--right side--}}
+        <img src="/static/images/graphic1.svg" style="" alt="" style="height:350px;" class="img-fluid">
+        <h3></h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{{!--Banner 3 section --}}
+<section class="banner2_section py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-center py-2">
+        {{!--left side--}}
+        <img src="/static/images/graphic2.svg" class="img-fluid" style="" alt="" style="height:350px;" class="img-fluid">
+        <h3></h3>
+      </div>
+      <div class="col-md-6 text-center">
+        {{!--right side --}}
+        <h3>Hello world!Welcome to Spring Boot.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio natus inventore non labore in aut explicabo, fugiat esse vel voluptatem officiis aliquam similique dolorem accusantium exercitationem dolorum iure modi dolore.</p>
+        <button class="btn btn-primary">
+          Click Here
+        </button>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+{{!-- services section--}}
+<section id="services_section" class="py-4">
+ <div class="container">
+   <h1 class="text-center text-success">Services that we provide</h1>
+  <div class="row">
+    {{!-- first service col --}}
+
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Provide Best Courses</h5>
+          <div class="container text-center py-3">
+            <i class="fa-solid fa-user-secret service_icon text-secondary"></i>
+          </div>
+          <p>We provide courses that help in learning and grabbing your dream offer from your dream company.</p>
+          <a href="#">Check</a>
+          <a href="#" class="ml-3">Support</a>
+        </div>
+      </div>
+    </div>
+    {{#each services}}
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          
+          <div class="container text-center py-3">
+            <i class="{{this.icon}} service_icon text-secondary"></i>
+          </div>
+
+          <h5 class="card-title">Provide Best Courses{{this.title}}</h5>
+          <p>We provide courses that help in learning and grabbing your dream offer from your dream company.</p>
+          <a href="{{this.link}}">{{this.linkText}}</a>
+          <a href="#" class="ml-3">Support</a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+ </div>
+</section>
+
+{{!-- contact us section --}}
+
+<section id="contact_us_section" class="py-5 background1">
+  <div class="container">
+    <h3 class="text-center text-muted">Contact Us</h3>
+    <div class="row">
+      <div class="col-md-12">
+
+<form action="/process-contact-form" method="post">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Your Email address</label>
+    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="contactNumberField" class="form-label">Your Contact Number</label>
+    <input name="phone" type="number" class="form-control" id="exampleInputPassword1">
+  </div>
+
+<div class="form-floating my-2">
+  <textarea name="query" rows="10" class="form-control" placeholder="Enter Your Query Here" id="queryField"></textarea>
+  <label for="queryField">Your Query</label>
+</div>
+
+  <div class="container text-center">
+  <button name="submit" type="submit" class="btn btn-dark">Submit</button>  
+  </div>
+  
+</form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{{!--About Section--}}
+
+<section class="about_section py-5">
+  <div class="container text-center">
+    <div class="row">
+    <div class="col-md-12">
+      <h3>About this site.</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, voluptatibus iure. Nam magnam, inventore tenetur quis quas nobis veritatis culpa velit explicabo quam fugit beatae, accusantium deserunt consectetur, neque delectus.</p>
+      <button class="btn btn-success btn-lg">
+        Contact Us
+      </button>
+    </div>
+  </div>
+  </div>
+</section>
+
+<footer class="footer background1 text-center py-5">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      @ 2023 Copyright:<span>LearnCodeWithDurgesh</span>
+    </div>
+  </div>
+</div>
+</footer>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
